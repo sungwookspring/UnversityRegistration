@@ -19,6 +19,6 @@ public class Student extends BaseTimeEntinity{
     @Column(nullable = false)
     private String FirstName;
 
-    @OneToMany(mappedBy = "enrollment")
+    @OneToMany(mappedBy = "student")
     List<Enrollment> enrollments;
 }
