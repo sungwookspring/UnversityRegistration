@@ -21,7 +21,7 @@ var main = {
             contentType: 'application/json; charset=utf-8',
             data: JSON.stringify(data)
         }).done(function (){
-            alert('회원가입이 완료되었습니다');
+            alert('수강등록이 완료되었습니다');
             window.location.href = '/';
         }).fail(function (error){
             alert(JSON.stringify(error));
