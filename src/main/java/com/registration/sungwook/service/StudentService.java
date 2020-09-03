@@ -1,6 +1,6 @@
 package com.registration.sungwook.service;
 
-import com.registration.sungwook.controller.Dto.StudentRequestAll;
+import com.registration.sungwook.controller.Dto.StudentRequestAllDto;
 import com.registration.sungwook.controller.Dto.StudentRequestDto;
 import com.registration.sungwook.domain.Student;
 import com.registration.sungwook.repository.StudentRepository;
@@ -30,12 +30,12 @@ public class StudentService {
      * 관리자 - 모든 회원 조회
      * @return
      */
-    public List<StudentRequestAll> getAllStudents(){
+    public List<StudentRequestAllDto> getAllStudents(){
         List<Student> allstudents =  studentRepository.findAll();
-        List<StudentRequestAll> studentRequestAll = new ArrayList<>();
+        List<StudentRequestAllDto> studentRequestAllDto = new ArrayList<>();
 
-        allstudents.forEach(student -> studentRequestAll.add(new StudentRequestAll(student)));
+        allstudents.forEach(student -> studentRequestAllDto.add(new StudentRequestAllDto(student)));
 
-        return studentRequestAll;
+        return studentRequestAllDto;
     }
 }

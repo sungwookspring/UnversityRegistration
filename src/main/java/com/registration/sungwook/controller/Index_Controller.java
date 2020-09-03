@@ -1,6 +1,8 @@
 package com.registration.sungwook.controller;
 
-import com.registration.sungwook.controller.Dto.StudentRequestAll;
+import com.registration.sungwook.controller.Dto.CourseRequestAllDto;
+import com.registration.sungwook.controller.Dto.StudentRequestAllDto;
+import com.registration.sungwook.service.CourseService;
 import com.registration.sungwook.service.StudentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -13,6 +15,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class Index_Controller {
     private final StudentService studentService;
+    private final CourseService courseService;
 
     @GetMapping("/")
     public String index(){
@@ -44,9 +47,35 @@ public class Index_Controller {
      */
     @GetMapping("/admin/student/list")
     public String ALLstudents(Model model){
-        List<StudentRequestAll> allstudents = studentService.getAllStudents();
+        List<StudentRequestAllDto> allstudents = studentService.getAllStudents();
         model.addAttribute("students", allstudents);
 
         return "admin/student/studentlist";
+    }
+
+    /***
+     * 모든강의 조회
+     * @param model
+     * @return
+     */
+    @GetMapping("/course/all")
+    public String AllCoursesForStudent(Model model){
+        List<CourseRequestAllDto> allCourse = courseService.getAll();
+        model.addAttribute("courses", allCourse);
+
+        return "student/courselist";
+    }
+
+    /***
+     * 교수 - 모든강의 조회
+     * @param model
+     * @return
+     */
+    @GetMapping("/professor/course/all")
+    public String AllCoursesForProfessor(Model model){
+        List<CourseRequestAllDto> allCourse = courseService.getAll();
+        model.addAttribute("courses", allCourse);
+
+        return "professor/courselist";
     }
 }
