@@ -10,4 +10,13 @@ public class Index_Controller {
     public String index(){
         return "index";
     }
+
+    /***
+     * 회권가입 창
+     * @return
+     */
+    @GetMapping("/student/register")
+    public String registerForm(){
+        return "register";
+    }
 }
