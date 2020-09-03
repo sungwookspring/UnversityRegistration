@@ -29,6 +29,16 @@ public class Index_Controller {
     }
 
     /***
+     * 교수 - 수강등록 페이지
+     * todo - 교수 엔티티
+     * @return
+     */
+    @GetMapping("/professor/course/enroll")
+    public String enrollCourseForm(){
+        return "professor/enroll_course";
+    }
+
+    /***
      * 관리자 - 모든 학생목록
      * @return
      */
