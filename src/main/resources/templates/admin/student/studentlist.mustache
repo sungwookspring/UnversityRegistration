@@ -1,0 +1,30 @@
+{{>layout/header}}
+
+        <div class="pagebody">
+            <!-- 목록 출력 영역 -->
+            <table class="table table-horizontal table-bordered">
+                <thead class="thead-strong">
+                <tr>
+                    <th>회원번호</th>
+                    <th>성</th>
+                    <th>이름</th>
+                    <th>회원가입일</th>
+                </tr>
+                </thead>
+                <tbody id="tbody">
+                {{#students}}
+                    <tr>
+                        <td>{{id}}</td>
+                        <td><a href="#">{{first_name}}</a></td>
+                        <td>{{last_name}}</td>
+                        <td>{{created_time}}</td>
+                    </tr>
+                {{/students}}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+{{>layout/footer}}
