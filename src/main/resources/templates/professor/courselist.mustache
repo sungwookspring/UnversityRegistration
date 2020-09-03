@@ -1,0 +1,28 @@
+{{>layout/header}}
+
+        <div class="pagebody">
+            <!-- 목록 출력 영역 -->
+            <table class="table table-horizontal table-bordered">
+                <thead class="thead-strong">
+                <tr>
+                    <th>강의번호</th>
+                    <th>강의이름</th>
+                    <th>학점</th>
+                </tr>
+                </thead>
+                <tbody id="tbody">
+                {{#courses}}
+                    <tr>
+                        <td>{{id}}</td>
+                        <td><a href="#">{{title}}</a></td>
+                        <td>{{grade}}</td>
+                    </tr>
+                {{/courses}}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+{{>layout/footer}}
