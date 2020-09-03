@@ -25,7 +25,7 @@ public class Index_Controller {
      */
     @GetMapping("/student/register")
     public String registerForm(){
-        return "register";
+        return "student/register";
     }
 
     /***
